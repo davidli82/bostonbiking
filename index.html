@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boston Biking</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="map.css" />
+    <script src="config.js"></script>
+    <script src="map.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <h1>🚴 Boston Biking</h1>
+      <label>
+        Filter by time:
+        <input id="time-slider" type="range" min="-1" max="1440" value="-1" disabled />
+        <time id="selected-time"></time>
+        <em id="any-time">(any time)</em>
+      </label>
+    </header>
+    <p>Explore Bluebikes traffic in Boston and Cambridge during March 2024. Move the slider to show arrivals and departures within an hour of the selected time.</p>
+    <p id="status" role="status">Loading map…</p>
+    <div id="map">
+      <svg aria-label="Bluebikes station traffic"></svg>
+    </div>
+    <div class="legend" aria-label="Station traffic flow">
+      <span>Station flow:</span>
+      <div style="--departure-ratio: 1">More departures</div>
+      <div style="--departure-ratio: 0.5">Balanced</div>
+      <div style="--departure-ratio: 0">More arrivals</div>
+    </div>
+    <p class="map-note">Larger circles show more station traffic. Hover over a station for counts. Green lines show bike routes.</p>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+body {
+  font: 100%/1.5 system-ui, sans-serif;
+  display: flex;
+  flex-flow: column;
+  max-width: 80em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1em;
+  color: #222;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: baseline;
+}
+
+h1 {
+  margin-block: 0.25em;
+}
+
+header label {
+  margin-left: auto;
+  text-align: right;
+}
+
+input[type='range'] {
+  width: 18em;
+  max-width: 65vw;
+  vertical-align: middle;
+  accent-color: steelblue;
+}
+
+time,
+#any-time {
+  display: block;
+  min-height: 1.5em;
+}
+
+#any-time,
+.map-note {
+  color: #666;
+}
+
+p {
+  margin-block: 0.5em;
+}
+
+#status:empty {
+  display: none;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  margin-block: 1em 0;
+}
+
+.legend > div {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.legend > div::before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: var(--color);
+}
+
+.map-note {
+  font-size: 0.875em;
+}
+
+@media (max-width: 600px) {
+  header label {
+    margin-left: 0;
+    text-align: left;
+  }
+}
